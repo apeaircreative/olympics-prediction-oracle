@@ -7,18 +7,18 @@ Resolve markets using advanced weighted oracle consensus with matrix ops, relati
 
 ```mermaid
 flowchart TD
-    A[Chainlink Automation Trigger] --> B[Fetch 4 Source Outcomes]
-    B --> C[Tiny Math Engine]
-    C --> D[Apply Matrix Transform]
-    D --> E[Add Noise Jitter]
-    E --> F[Calculate Weighted Consensus]
-    F --> G{Confidence ≥ 75%?}
-    G -->|Yes| H[Settle On-Chain]
-    G -->|No| I[Dispute Market]
-    H --> J[Update Source Weights]
-    I --> K[Manual Review Required]
-    J --> L[Log Adaptations]
-    L --> M[Settlement Complete]
+    A[⚡ Automation] --> B[📊 Fetch 4 Sources]
+    B --> C[🧮 Math Engine]
+    C --> D[🔄 Matrix Transform]
+    D --> E[🎲 Add Noise]
+    E --> F[⚖️ Consensus]
+    F --> G{🔍 ≥75%?}
+    G -->|Yes| H[✅ Settle]
+    G -->|No| I[⚠️ Dispute]
+    H --> J[🔄 Update Weights]
+    I --> K[👤 Manual Review]
+    J --> L[📝 Log]
+    L --> M[🏁 Complete]
     
     style A fill:#e1f5fe
     style C fill:#f3e5f5

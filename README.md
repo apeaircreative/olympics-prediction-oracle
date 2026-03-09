@@ -5,44 +5,44 @@
 
 ```mermaid
 graph TB
-    subgraph "Protocol Layer"
+    subgraph "🏗️ Protocol Layer"
         PM[PredictionMarket.sol]
-        PM --> |Market Creation| MC[Market Creation]
-        PM --> |Betting| BT[ETH Betting System]
-        PM --> |Settlement| ST[Oracle Settlement]
+        PM --> MC[Market Creation]
+        PM --> BT[ETH Betting]
+        PM --> ST[Oracle Settlement]
     end
     
-    subgraph "Oracle Layer"
+    subgraph "🔮 Oracle Layer"
         CRE[Chainlink CRE]
-        AI[Google Gemini AI]
+        AI[Google Gemini]
         OR[4-Source Consensus]
-        CRE --> |Rephrase Questions| AI
-        CRE --> |Data Sources| OR
+        CRE --> AI
+        CRE --> OR
         OR --> ISU[ISU Official]
         OR --> OLY[Olympics API]
         OR --> SR[Sportradar]
         OR --> NEWS[News Sources]
     end
     
-    subgraph "Automation Layer"
+    subgraph "⚡ Automation Layer"
         AUTO[Chainlink Automation]
         CRON[CRON: 0 */2 * * *]
         BOT[Settlement Bot]
-        AUTO --> |Schedule| CRON
-        AUTO --> |Execute| BOT
-        BOT --> |Trigger| ST
+        AUTO --> CRON
+        AUTO --> BOT
+        BOT --> ST
     end
     
-    subgraph "Data Layer"
+    subgraph "📊 Data Layer"
         OLYMPIC[Olympic Data]
         CONTEXT[Event Context]
-        OLYMPIC --> |Skating Results| OR
-        CONTEXT --> |Rivalry Info| AI
+        OLYMPIC --> OR
+        CONTEXT --> AI
     end
     
-    ST --> |Report| PM
-    OR --> |Consensus| ST
-    AI --> |Professional Q| MC
+    ST --> PM
+    OR --> ST
+    AI --> MC
     
     style PM fill:#e1f5fe
     style CRE fill:#f3e5f5
@@ -95,37 +95,37 @@ Specifically, it targets the high-stakes rivalry: **Ilia Malinin (Quad God)** vs
 
 ```mermaid
 sequenceDiagram
-    participant User as User/Bettor
+    participant U as User
     participant PM as PredictionMarket
     participant CRE as Chainlink CRE
     participant AI as Google Gemini
-    participant Auto as Chainlink Automation
-    participant Oracle as Data Sources
+    participant AUTO as Automation
+    participant ORACLE as Data Sources
     
-    Note over User,Oracle: Market Creation Phase
-    User->>PM: createMarket("Will Ilia land quad axel?")
+    Note over U,ORACLE: 🏅 Market Creation
+    U->>PM: createMarket("Will Ilia land quad axel?")
     PM->>CRE: Trigger AI Rephrasing
-    CRE->>AI: "Will Ilia Malinin successfully land a quadruple axel jump?"
+    CRE->>AI: "Will Ilia Malinin land a quadruple axel jump?"
     AI-->>CRE: Professional question
     CRE-->>PM: Updated question
-    PM-->>User: Market created (ID: 0)
+    PM-->>U: Market created (ID: 0)
     
-    Note over User,Oracle: Betting Phase
-    User->>PM: predict{value: 1 ETH}(0, Yes)
-    User->>PM: predict{value: 0.5 ETH}(0, No)
+    Note over U,ORACLE: 💰 Betting Phase
+    U->>PM: predict{value: 1 ETH}(0, Yes)
+    U->>PM: predict{value: 0.5 ETH}(0, No)
     
-    Note over User,Oracle: Settlement Phase (Every 2 hours)
-    Auto->>PM: triggerSettlement(0)
+    Note over U,ORACLE: ⚖️ Settlement (Every 2 hours)
+    AUTO->>PM: triggerSettlement(0)
     PM->>CRE: Request oracle consensus
-    CRE->>Oracle: Fetch outcomes from 4 sources
-    Oracle-->>CRE: Results: [Yes, No, Yes, Yes]
-    CRE->>CRE: Calculate weighted consensus (75% Yes)
-    CRE-->>PM: Report settlement (Yes, 75% confidence)
+    CRE->>ORACLE: Fetch from 4 sources
+    ORACLE-->>CRE: [Yes, No, Yes, Yes]
+    CRE->>CRE: Calculate consensus (75% Yes)
+    CRE-->>PM: Report settlement
     PM->>PM: Update market state
     
-    Note over User,Oracle: Claiming Phase
-    User->>PM: claim(0)
-    PM-->>User: Payout (1.5 ETH)
+    Note over U,ORACLE: 🏆 Claiming Phase
+    U->>PM: claim(0)
+    PM-->>U: Payout (1.5 ETH)
 ```
 
 ---

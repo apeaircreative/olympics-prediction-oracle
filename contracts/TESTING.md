@@ -9,12 +9,12 @@
 ## 📊 Test Results Summary
 
 ```mermaid
-pie title Test Suite Coverage
-    "Unit Tests " : 1
-    "Integration Tests " : 9
-    "Adversarial Tests " : 9
-    "Fuzz Tests " : 3
-    "Total Tests" : 22
+pie title Test Coverage
+    "🧪 Unit Tests" : 1
+    "🔄 Integration" : 9
+    "🛡️ Adversarial" : 9
+    "🎲 Fuzz Tests" : 3
+    "📊 Total" : 22
 ```
 
 | Test Suite | Tests | Status | Focus |

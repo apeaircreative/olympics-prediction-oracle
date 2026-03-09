@@ -7,19 +7,19 @@ Transform slang-heavy user questions into professional prediction markets using 
 
 ```mermaid
 flowchart TD
-    A[User Input] --> B{Slang Detected?}
-    B -->|Yes| C[Call Gemini AI]
-    B -->|No| D[Use Original Question]
-    C --> E[Professional Rephrasing]
-    E --> F[Create On-Chain Market]
+    A[📝 User Input] --> B{🤖 Slang?}
+    B -->|Yes| C[🧠 Gemini AI]
+    B -->|No| D[✅ Original]
+    C --> E[📋 Rephrase]
+    E --> F[🏗️ Create Market]
     D --> F
-    F --> G[Track in Settlement Bot]
-    G --> H[Market Active]
+    F --> G[📊 Track Bot]
+    G --> H[🟢 Active]
     
     style A fill:#e1f5fe
     style C fill:#f3e5f5
     style F fill:#e8f5e8
-    style H fill:#fff3e0
+    style H fill:#c8e6c9
 ```
 
 ## Steps

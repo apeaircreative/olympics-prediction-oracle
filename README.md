@@ -113,6 +113,20 @@ npm run test:integration
 
 ---
 
+## 🔗 Contract Integration
+
+### Deployed Contract
+- **Address:** `0xfa96065F919762EFb7Bef68Edf9fb0559CC3e3a3`
+- **Network:** Ethereum Mainnet (demo configuration)
+- **Chain:** Chainlink CRE supported network
+
+### Chainlink Automation
+- **Upkeep Address:** `0x516Cf68FA8030958056C1b68336258A93D709687`
+- **Schedule:** Every 2 hours during Olympics (Feb 10-13, 2026)
+- **Funding:** 2 LINK for automated settlement
+
+---
+
 ## 🏗️ Technical Architecture
 
 ### Protocol Flow

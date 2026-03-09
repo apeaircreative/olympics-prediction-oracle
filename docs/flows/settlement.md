@@ -1,5 +1,13 @@
 # Settlement Flow
 
+## 🧭 Navigation
+- [← Betting Flow](./betting.md)
+- [Chainlink Automation](./chainlink-automation.md) ⚡
+- [Oracle Data Pipeline](../architecture/oracle-data-pipeline.md) 🔮
+- [Developer Guide](../guides/developer-guide.md) 📚
+
+---
+
 ## Overview
 Resolve markets using advanced weighted oracle consensus with matrix ops, relative advantages, and adaptive weights. Includes dispute handling.
 

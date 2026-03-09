@@ -1,5 +1,13 @@
 # Betting Flow
 
+## 🧭 Navigation
+- [← Market Creation](./market-creation.md)
+- [Settlement Flow](./settlement.md) →
+- [Chainlink Automation](./chainlink-automation.md) ⚡
+- [Developer Guide](../guides/developer-guide.md) 📚
+
+---
+
 ## Overview
 Allow users to bet YES/NO on prediction markets with ETH.
 

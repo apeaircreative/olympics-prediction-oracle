@@ -195,9 +195,10 @@ make demo       # Run Olympics demo
 - [**Developer Guide**](docs/guides/developer-guide.md) - Setup and best practices
 
 ### 🎯 **Demo & Guides**
+- [**📚 Documentation Index**](docs/README.md) - Complete documentation navigation
 - [**Olympics Demo**](docs/guides/olympics-demo.md) - Complete walkthrough
 - [**Quick Start**](#-quick-start) - 1-minute demo setup
-- [**Architecture Deep Dive**](docs/architecture/) - Technical documentation
+- [**Architecture Deep Dive**](docs/architecture/architecture.md) - Technical documentation
 
 ### 🔗 **Contracts**
 - **Contract**: [0xfa96065F919762EFb7Bef68Edf9fb0559CC3e3a3](https://etherscan.io/address/0xfa96065F919762EFb7Bef68Edf9fb0559CC3e3a3)

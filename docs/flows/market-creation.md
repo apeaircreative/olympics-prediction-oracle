@@ -1,5 +1,13 @@
 # Market Creation Flow
 
+## 🧭 Navigation
+- [← System Architecture](../README.md#-system-architecture)
+- [Betting Flow](./betting.md) →
+- [Settlement Flow](./settlement.md) →
+- [Developer Guide](../guides/developer-guide.md) 📚
+
+---
+
 ## Overview
 Transform slang-heavy user questions into professional prediction markets using AI rephrasing.
 

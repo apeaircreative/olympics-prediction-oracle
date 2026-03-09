@@ -2,9 +2,15 @@
 
 **Quick setup for developers to get the Olympics Prediction Market running locally**
 
+## 🧭 Navigation
+- [← System Overview](../../README.md#-quick-start)
+- [Olympics Demo](./olympics-demo.md) 🎭
+- [Security Model](../architecture/security-model.md) 🛡️
+- [Testing Suite](../../contracts/TESTING.md) 🧪
+
 ---
 
-## � **Security First - Important!**
+## 🔒 **Security First - Important!**
 
 ### ⚠️ **Never Commit Real Private Keys**
 - Your `.env` file contains sensitive data

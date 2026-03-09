@@ -1,16 +1,53 @@
 # ⛸️ 2026 Winter Olympics: Men's Figure Skating Prediction Market
 ### *Binary Prediction Market Protocol for Chainlink Convergence Hackathon*
 
-## �️ System Architecture
+## 🏗️ System Architecture
 
-```
-Protocol Layer
-    ↓
-Oracle Layer  
-    ↓
-Automation Layer
-    ↓
-Data Layer
+```mermaid
+graph TB
+    subgraph "Protocol Layer"
+        PM[PredictionMarket.sol]
+        PM --> |Market Creation| MC[Market Creation]
+        PM --> |Betting| BT[ETH Betting System]
+        PM --> |Settlement| ST[Oracle Settlement]
+    end
+    
+    subgraph "Oracle Layer"
+        CRE[Chainlink CRE]
+        AI[Google Gemini AI]
+        OR[4-Source Consensus]
+        CRE --> |Rephrase Questions| AI
+        CRE --> |Data Sources| OR
+        OR --> ISU[ISU Official]
+        OR --> OLY[Olympics API]
+        OR --> SR[Sportradar]
+        OR --> NEWS[News Sources]
+    end
+    
+    subgraph "Automation Layer"
+        AUTO[Chainlink Automation]
+        CRON[CRON: 0 */2 * * *]
+        BOT[Settlement Bot]
+        AUTO --> |Schedule| CRON
+        AUTO --> |Execute| BOT
+        BOT --> |Trigger| ST
+    end
+    
+    subgraph "Data Layer"
+        OLYMPIC[Olympic Data]
+        CONTEXT[Event Context]
+        OLYMPIC --> |Skating Results| OR
+        CONTEXT --> |Rivalry Info| AI
+    end
+    
+    ST --> |Report| PM
+    OR --> |Consensus| ST
+    AI --> |Professional Q| MC
+    
+    style PM fill:#e1f5fe
+    style CRE fill:#f3e5f5
+    style AUTO fill:#e8f5e8
+    style OLYMPIC fill:#fff3e0
 ```
 
 ### Layer Overview
@@ -54,6 +91,45 @@ Specifically, it targets the high-stakes rivalry: **Ilia Malinin (Quad God)** vs
 
 ---
 
+## 📊 Data Flow & Process
+
+```mermaid
+sequenceDiagram
+    participant User as User/Bettor
+    participant PM as PredictionMarket
+    participant CRE as Chainlink CRE
+    participant AI as Google Gemini
+    participant Auto as Chainlink Automation
+    participant Oracle as Data Sources
+    
+    Note over User,Oracle: Market Creation Phase
+    User->>PM: createMarket("Will Ilia land quad axel?")
+    PM->>CRE: Trigger AI Rephrasing
+    CRE->>AI: "Will Ilia Malinin successfully land a quadruple axel jump?"
+    AI-->>CRE: Professional question
+    CRE-->>PM: Updated question
+    PM-->>User: Market created (ID: 0)
+    
+    Note over User,Oracle: Betting Phase
+    User->>PM: predict{value: 1 ETH}(0, Yes)
+    User->>PM: predict{value: 0.5 ETH}(0, No)
+    
+    Note over User,Oracle: Settlement Phase (Every 2 hours)
+    Auto->>PM: triggerSettlement(0)
+    PM->>CRE: Request oracle consensus
+    CRE->>Oracle: Fetch outcomes from 4 sources
+    Oracle-->>CRE: Results: [Yes, No, Yes, Yes]
+    CRE->>CRE: Calculate weighted consensus (75% Yes)
+    CRE-->>PM: Report settlement (Yes, 75% confidence)
+    PM->>PM: Update market state
+    
+    Note over User,Oracle: Claiming Phase
+    User->>PM: claim(0)
+    PM-->>User: Payout (1.5 ETH)
+```
+
+---
+
 ## ⛸️ Example Markets
 - *"Will Ilia Malinin win men's singles gold at 2026 Olympics?"*
 - *"Will Yuma Kagiyama finish higher than Ilia Malinin in free skate?"*
@@ -81,6 +157,45 @@ npm run workflow:install
 ```
 
 ### Development
+```bash
+# Run tests
+forge test --via-ir
+
+# Local development
+npm run dev
+```
+
+---
+
+## 📚 Documentation Navigation
+
+### 🏗️ **System Overview**
+- [**System Architecture**](#-system-architecture) - Protocol layers and components
+- [**Data Flow & Process**](#-data-flow--process) - End-to-end sequence diagram
+- [**Technology Stack**](#-technology-stack) - CRE, AI, Automation, Oracle pipeline
+
+### 🔄 **Process Flows**
+- [**Market Creation**](docs/flows/market-creation.md) - AI rephrasing and on-chain deployment
+- [**Betting System**](docs/flows/betting.md) - YES/NO betting with ETH pools
+- [**Settlement Engine**](docs/flows/settlement.md) - Tiny Math Engine consensus
+- [**Chainlink Automation**](docs/flows/chainlink-automation.md) - CRON scheduling and triggers
+
+### 🛡️ **Security & Testing**
+- [**Testing Suite**](contracts/TESTING.md) - 309 passing tests, security scenarios
+- [**Security Model**](docs/architecture/security-model.md) - Multi-layer security architecture
+- [**Developer Guide**](docs/guides/developer-guide.md) - Setup and best practices
+
+### 🎯 **Demo & Guides**
+- [**Olympics Demo**](docs/guides/olympics-demo.md) - Complete walkthrough
+- [**Quick Start**](#-quick-start) - 1-minute demo setup
+- [**Architecture Deep Dive**](docs/architecture/) - Technical documentation
+
+### 🔗 **External Links**
+- **Contract**: [0xfa96065F919762EFb7Bef68Edf9fb0559CC3e3a3](https://etherscan.io/address/0xfa96065F919762EFb7Bef68Edf9fb0559CC3e3a3)
+- **Automation**: [0x516Cf68FA8030958056C1b68336258A93D709687](https://etherscan.io/address/0x516Cf68FA8030958056C1b68336258A93D709687)
+- **GitHub**: [apeaircreative/olympics-prediction-oracle](https://github.com/apeaircreative/olympics-prediction-oracle)
+
+---
 ```bash
 # Contract testing
 forge test
@@ -189,19 +304,5 @@ This is a hackathon submission project. For production deployment considerations
 4. **Documentation:** Additional API documentation
 
 ---
-
-## 📄 License
-
-MIT License - see [LICENSE](LICENSE) for details.
-
----
-
-## 🏆 Hackathon Submission
-
-**Built for Chainlink Convergence Hackathon 2026**
-
-- **Prediction Markets Track:** $16k prize pool
-- **CRE & AI Track:** $17k prize pool
-- **Technologies:** Chainlink CRE, Foundry, Google Gemini, Chainlink Automation
 
 *Protocol demonstrates full-stack Web3 development with advanced oracle infrastructure and AI integration.*

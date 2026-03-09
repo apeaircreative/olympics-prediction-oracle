@@ -3,6 +3,30 @@
 ## Overview
 Resolve markets using advanced weighted oracle consensus with matrix ops, relative advantages, and adaptive weights. Includes dispute handling.
 
+## Settlement Process
+
+```mermaid
+flowchart TD
+    A[Chainlink Automation Trigger] --> B[Fetch 4 Source Outcomes]
+    B --> C[Tiny Math Engine]
+    C --> D[Apply Matrix Transform]
+    D --> E[Add Noise Jitter]
+    E --> F[Calculate Weighted Consensus]
+    F --> G{Confidence ≥ 75%?}
+    G -->|Yes| H[Settle On-Chain]
+    G -->|No| I[Dispute Market]
+    H --> J[Update Source Weights]
+    I --> K[Manual Review Required]
+    J --> L[Log Adaptations]
+    L --> M[Settlement Complete]
+    
+    style A fill:#e1f5fe
+    style C fill:#f3e5f5
+    style F fill:#e8f5e8
+    style H fill:#c8e6c9
+    style I fill:#ffcdd2
+```
+
 ## Steps
 1. Fetch outcomes from 4 sources (ISU, Olympics, Sportradar, News) with weights & reliabilities
 2. Apply Tiny Math Engine: matrix transform, noise jitter, advantage normalization
@@ -28,6 +52,15 @@ Add seeded Gaussian-like jitter (±2.5%) for variance:
 
 ```typescript
 const noise = (Math.sin(seed + rel) * 0.05 - 0.025);
+```
+
+---
+
+## 📚 Related Documentation
+- [← System Architecture](../../README.md#-system-architecture)
+- [Market Creation](./market-creation.md)
+- [Betting Flow](./betting.md)
+- [Chainlink Automation](./chainlink-automation.md)
 reliability += noise; // Clipped 0.1-1.0
 ```
 

@@ -8,19 +8,28 @@
 
 ## 📊 Test Results Summary
 
+```mermaid
+pie title Test Suite Coverage
+    "Unit Tests " : 1
+    "Integration Tests " : 9
+    "Adversarial Tests " : 9
+    "Fuzz Tests " : 3
+    "Total Tests" : 22
+```
+
 | Test Suite | Tests | Status | Focus |
-|:------------|:------|:-------|:------|
-| [Unit Tests](#unit-tests) | 1/1 | ✅ | Core market creation |
-| [Integration](#integration-tests) | 9/9 | 🔄 | Full lifecycle (timing fixes needed) |
-| [Adversarial](#adversarial-tests) | 9/9 | 🔄 | Security scenarios (timing fixes needed) |
-| [Fuzz Tests](#fuzz-tests) | 3/3 | ✅ | Randomized input testing |
-| **TOTAL** | **22/22** | **✅ CORE WORKING** | **Production-ready** |
+|:------------|:------|:-------:|:------|
+| [Unit Tests](#unit-tests) | 1/1 | | Core market creation |
+| [Integration](#integration-tests) | 9/9 | | Full lifecycle (timing fixes needed) |
+| [Adversarial](#adversarial-tests) | 9/9 | | Security scenarios (timing fixes needed) |
+| [Fuzz Tests](#fuzz-tests) | 3/3 | | Randomized input testing |
+| **TOTAL** | **22/22** | ** CORE WORKING** | **Production-ready** |
 
 ---
 
-## 🎯 Hackathon Submission Status
+## Hackathon Submission Status
 
-### ✅ **What Works Perfectly**
+### **What Works Perfectly**
 - **Market Creation** - Verified (224,146 gas)
 - **Contract Interface** - All functions accessible
 - **Security Testing** - Comprehensive adversarial scenarios

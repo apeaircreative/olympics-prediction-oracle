@@ -3,6 +3,25 @@
 ## Overview
 Transform slang-heavy user questions into professional prediction markets using AI rephrasing.
 
+## Process Flow
+
+```mermaid
+flowchart TD
+    A[User Input] --> B{Slang Detected?}
+    B -->|Yes| C[Call Gemini AI]
+    B -->|No| D[Use Original Question]
+    C --> E[Professional Rephrasing]
+    E --> F[Create On-Chain Market]
+    D --> F
+    F --> G[Track in Settlement Bot]
+    G --> H[Market Active]
+    
+    style A fill:#e1f5fe
+    style C fill:#f3e5f5
+    style F fill:#e8f5e8
+    style H fill:#fff3e0
+```
+
 ## Steps
 1. User inputs slang question (e.g., "Will Ilia moon gold?")
 2. Detect slang keywords ("moon", "rekt", "ape")
@@ -17,3 +36,11 @@ Transform slang-heavy user questions into professional prediction markets using 
 
 ## Output
 JSON: `{"status": "Success", "message": "Market created: \"Will Ilia win gold?\"", "links": {...}}`
+
+---
+
+## 📚 Related Documentation
+- [← System Architecture](../../README.md#-system-architecture)
+- [Betting Flow](./betting.md)
+- [Settlement Flow](./settlement.md)
+- [Chainlink Automation](./chainlink-automation.md)

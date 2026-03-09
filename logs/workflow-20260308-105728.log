@@ -1,0 +1,106 @@
+Running workflow simulation...
+Initializing...
+Loading settings...
+Checking RPC connectivity...
+Compiling workflow...
+✓ Workflow compiled
+! Secret "CRE_ETH_PRIVATE_KEY" uses itself as the env var name — this is fragile and may cause confusion. Consider using a distinct env var name (e.g. "CRE_CRE_ETH_PRIVATE_KEY").
+! Secret "MARKET_ADDRESS" uses itself as the env var name — this is fragile and may cause confusion. Consider using a distinct env var name (e.g. "CRE_MARKET_ADDRESS").
+
+[?25l[?2004h[?1004h┃ HTTP Trigger Configuration                                                    
+┃ Enter a file path or JSON directly for the HTTP trigger                       
+┃ > {                                                                           
+
+enter submit[D[4A
+
+┃ > f                                                                           
+
+[D[4A
+
+┃ > ff                                                                          
+
+[D[4A
+
+┃ > fff                                                                         
+
+[D[4A
+
+┃ > ffff                                                                        
+
+[D[4A
+
+┃ > fff                                                                         
+
+[D[4A
+
+┃ > ff                                                                          
+
+[D[4A
+
+┃ > f                                                                           
+
+[D[4A
+
+┃ > {                                                                           
+
+[D[4A
+
+┃ > {"question": "Will Ilia Malinin moon gold?"}                                
+
+[D[4A [J[D[2K[?2004l[?25h[?1002l[?1003l[?1006l[?1004l✓ Parsed JSON input successfully
+✓ Created HTTP trigger payload with 1 fields
+2026-03-08T10:57:46Z [SIMULATION] Simulator Initialized
+
+2026-03-08T10:57:46Z [SIMULATION] Running trigger trigger=http-trigger@1.0.0-alpha
+2026-03-08T10:57:46Z [USER LOG] [Audit] Input: "Will Ilia Malinin moon gold?"
+2026-03-08T10:57:46Z [USER LOG] [Policy] Rephrasing with AI...
+2026-03-08T10:57:47Z [USER LOG] [Audit] Final: "Will Ilia Malinin win gold in 2026?"
+2026-03-08T10:57:47Z [USER LOG] [Consensus] Generating signed report...
+2026-03-08T10:57:47Z [USER LOG] [Broadcast] Submitting to Sepolia...
+
+============================================================
+          Workflow Result Summary
+============================================================
+Status:       Success
+Original:     "Will Ilia Malinin moon gold?"
+Rephrased:    "Will Ilia Malinin win gold in 2026?"
+Transaction:  https://sepolia.etherscan.io/tx/89,220,41,123,157,26,63,168,112,215,23,207,70,32,129,113,138,101,243,50,182,51,200,28,250,191,219,4,211,223,93,248
+Contract:     https://sepolia.etherscan.io/address/0xfa96065F919762EFb7Bef68Edf9fb0559CC3e3a3
+Tx Hash:      89,220,41,123,157,26,63,168,112,215,23,207,70,32,129,113,138,101,243,50,182,51,200,28,250,191,219,4,211,223,93,248
+============================================================
+
+Full detailed logs saved to: workflow.log
+Tip: Cmd + double-click URLs to open in browser
+
+✓ Workflow Simulation Result:
+{
+  "audit": {
+    "final": "Will Ilia Malinin win gold in 2026?",
+    "original": "Will Ilia Malinin moon gold?"
+  },
+  "blockchain": {
+    "contract": "https://sepolia.etherscan.io/address/0xfa96065F919762EFb7Bef68Edf9fb0559CC3e3a3",
+    "explorer": "https://sepolia.etherscan.io/tx/89,220,41,123,157,26,63,168,112,215,23,207,70,32,129,113,138,101,243,50,182,51,200,28,250,191,219,4,211,223,93,248",
+    "transactionId": "Wdwpe50aP6hw1xfPRiCBcYpl8zK2M8gc+r/bBNPfXfg="
+  },
+  "status": "Success"
+}
+
+2026-03-08T10:58:12Z [SIMULATION] Execution finished signal received
+2026-03-08T10:58:12Z [SIMULATION] Skipping WorkflowEngineV2
+
+╭──────────────────────────────────────────────────────╮
+│ Simulation complete! Ready to deploy your workflow?  │
+│                                                      │
+│ Run cre account access to request deployment access. │
+╰──────────────────────────────────────────────────────╯
+
+
+=== Quick Summary ===
+  "blockchain": {
+    "explorer": "https://sepolia.etherscan.io/tx/89,220,41,123,157,26,63,168,112,215,23,207,70,32,129,113,138,101,243,50,182,51,200,28,250,191,219,4,211,223,93,248",
+    "transactionId": "Wdwpe50aP6hw1xfPRiCBcYpl8zK2M8gc+r/bBNPfXfg="
+  "status": "Success"
+
+Full logs: logs/workflow-20260308-105728.log
+Tip: Cmd + double-click URLs to open in browser.

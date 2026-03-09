@@ -1,0 +1,73 @@
+# macOS junk
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Node.js / JS ecosystem
+node_modules/
+npm-debug.log
+yarn-error.log
+bun.lock
+package-lock.json          # optional: if you prefer yarn/pnpm over npm lockfile
+.pnpm-lock.yaml
+
+# Build / dist artifacts (large, regenerated)
+dist/
+build/
+out/
+cache/
+coverage/
+.next/
+.vercel/
+*.min.js
+*.min.css
+
+# Foundry / Solidity build artifacts (very large!)
+contracts/cache/
+contracts/out/
+contracts/forge-artifacts/
+contracts/broadcast/
+contracts/foundry.lock
+
+# Chainlink CRE / workflow temp files
+.cre_build_tmp.js
+tmp.js
+tmp.wasm
+*.cre_build_tmp.*
+
+# Logs & temp files
+/logs
+*.log
+/tmp/
+logs/
+
+# Secrets & env
+.env
+secrets.yaml               # ← critical! never commit real secrets
+
+# Docs & personal notes (your /docs folder)
+/research
+/ideation
+/reports
+/analysis
+/guides
+/strategy
+/templates
+
+# Editor / IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Testing / temp
+test-prediction/.env
+before-cleanup.txt
+after-cleanup.txtnode_modules/
+workflows/node_modules/
+
+# Large build directories
+workflows/node_modules/
+cre_bin
+workflows/tmp*
+*.wasm

@@ -1,0 +1,17 @@
+{
+    "private": true,
+    "scripts": {
+        "workflow:install": "cd workflow && bun install",
+        "workflow:check": "cd workflow && bun run check",
+        "workflow:dev": "nodemon -e ts -x ./cre_bin workflow simulate ./workflow -g",
+        "workflow:simulate": "./cre_bin workflow simulate ./workflow --target staging-settings",
+        "workflow:live": "./cre_bin workflow simulate ./workflow --target production-settings --broadcast",
+        "workflow:settle": "./cre_bin workflow simulate ./workflow/settlement --target production-settings --broadcast",
+        "contracts:build": "cd contracts && forge build",
+        "settlement:bot": "bun settlement-bot.ts"
+    },
+    "dependencies": {
+        "croner": "^10.0.1",
+        "ethers": "^6.16.0"
+    }
+}

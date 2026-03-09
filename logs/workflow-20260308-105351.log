@@ -1,0 +1,20 @@
+Running workflow simulation...
+Initializing...
+Loading settings...
+Checking RPC connectivity...
+Compiling workflow...
+✓ Workflow compiled
+! Secret "CRE_ETH_PRIVATE_KEY" uses itself as the env var name — this is fragile and may cause confusion. Consider using a distinct env var name (e.g. "CRE_CRE_ETH_PRIVATE_KEY").
+! Secret "MARKET_ADDRESS" uses itself as the env var name — this is fragile and may cause confusion. Consider using a distinct env var name (e.g. "CRE_MARKET_ADDRESS").
+
+[?25l[?2004h[?1004h┃ HTTP Trigger Configuration                                                    
+┃ Enter a file path or JSON directly for the HTTP trigger                       
+┃ > {                                                                           
+
+enter submit[D[2K[?2004l[?25h[?1002l[?1003l[?1006l[?1004l✗ Failed to get HTTP trigger payload: HTTP trigger input cancelled: user aborted
+
+
+=== Quick Summary ===
+
+Full logs: logs/workflow-20260308-105351.log
+Tip: Cmd + double-click URLs to open in browser.

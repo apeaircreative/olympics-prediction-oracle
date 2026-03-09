@@ -1,0 +1,23 @@
+# ==========================================================================
+# CRE OLYMPICS WORKFLOW
+# ==========================================================================
+# Human CLI: bun workflow.ts "Your question"
+# CI gate:   bun run check:files
+# Network:   cre workflow simulate --target staging-settings
+
+staging-settings:
+  user-workflow:
+    workflow-name: "olympics-workflow-staging"
+  workflow-artifacts:
+    workflow-path: "./workflow.ts"
+    config-path: "./cspell.json"
+    secrets-path: "/Users/aaliyah/cre-bootcamp/secrets.yaml"
+
+production-settings:
+  user-workflow:
+    workflow-name: "olympics-workflow-production"
+  workflow-artifacts:
+    workflow-path: "./workflow.ts"
+    config-path: "./cspell.json"
+    secrets-path: "/Users/aaliyah/cre-bootcamp/secrets.yaml"
+

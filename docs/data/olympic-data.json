@@ -1,0 +1,49 @@
+{
+  "event": "2026 Winter Olympics Men's Figure Skating",
+  "days": [
+    {
+      "date": "2026-02-10",
+      "phase": "short_program",
+      "venue": "Milano Ice Skating Arena",
+      "results": [
+        {"rank": 1, "athlete": "Ilia Malinin", "nation": "USA", "score": 108.16, "tes": 62.35, "pcs": 45.81},
+        {"rank": 2, "athlete": "Yuma Kagiyama", "nation": "JPN", "score": 103.07, "tes": 56.50, "pcs": 46.57},
+        {"rank": 3, "athlete": "Adam Siao Him Fa", "nation": "FRA", "score": 102.55, "tes": 57.27, "pcs": 45.28},
+        {"rank": 4, "athlete": "Daniel Grassl", "nation": "ITA", "score": 93.46, "tes": 52.73, "pcs": 40.73},
+        {"rank": 5, "athlete": "Mikhail Shaidorov", "nation": "KAZ", "score": 92.94, "tes": 52.45, "pcs": 40.49}
+      ],
+      "highlights": ["Malinin flawless quads", "Kagiyama PCS edge", "No major falls in top 10"],
+      "betting_shift": "Malinin -200 to -350 post-event"
+    },
+    {
+      "date": "2026-02-11",
+      "phase": "rest_period",
+      "news": ["No injuries/withdrawals", "Athlete hype statements"],
+      "odds_changes": "Malinin -350 to -300, Shaidorov +1200 value"
+    },
+    {
+      "date": "2026-02-12",
+      "phase": "rest_period",
+      "venue": "Stable indoor conditions"
+    },
+    {
+      "date": "2026-02-13",
+      "phase": "free_skate",
+      "venue": "Milano Ice Skating Arena",
+      "results": [
+        {"rank": 1, "athlete": "Mikhail Shaidorov", "nation": "KAZ", "total": 291.58, "sp": 92.94, "fs": 198.64, "tes_fs": 114.68, "pcs_fs": 83.96},
+        {"rank": 2, "athlete": "Yuma Kagiyama", "nation": "JPN", "total": 280.06, "sp": 103.07, "fs": 176.99, "tes_fs": 92.15, "pcs_fs": 85.84},
+        {"rank": 3, "athlete": "Shun Sato", "nation": "JPN", "total": 274.90, "sp": 88.70, "fs": 186.20, "tes_fs": 101.85, "pcs_fs": 84.35},
+        {"rank": 8, "athlete": "Ilia Malinin", "nation": "USA", "total": 264.49, "sp": 108.16, "fs": 156.33}
+      ],
+      "key_moments": ["Shaidorov quad Lutz opener", "Malinin 2 falls (quad Axel, Lutz)", "Backflip in exhibition"],
+      "betting_impact": "Malinin odds crashed, Shaidorov +1200 payout",
+      "records": ["Kazakhstan first men's gold", "Highest FS TES 114.68"]
+    }
+  ],
+  "betting_insights": {
+    "pre_event_odds": {"Malinin": -200, "Kagiyama": 300, "Shaidorov": 1000},
+    "variances": "FS TES 80-114, SP tight 90-100",
+    "edges": ["Shaidorov underpriced", "Kagiyama consistency value", "Malinin pressure risk"]
+  }
+}

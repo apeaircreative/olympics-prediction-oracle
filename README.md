@@ -139,30 +139,39 @@ sequenceDiagram
 
 ## 🚀 Quick Start
 
-### Setup
+### 🎯 **5-Command Setup**
 ```bash
-# Install dependencies
-npm install
+# 1️⃣ Install dependencies
 forge install
-npm run workflow:install
-```
 
-### Demo
-```bash
-# Full lifecycle demo (1 minute)
-./scripts/demo/demo-olympics.sh --fast
-
-# Realistic demo (5+ minutes)
-./scripts/demo/demo-olympics.sh
-```
-
-### Development
-```bash
-# Run tests
+# 2️⃣ Run tests (verify setup)
 forge test --via-ir
 
-# Local development
-npm run dev
+# 3️⃣ Start local chain
+anvil
+
+# 4️⃣ Deploy contracts (new terminal)
+forge script script/Deploy.s.sol --rpc-url http://localhost:8545 --broadcast
+
+# 5️⃣ Run full demo
+make demo
+```
+
+### 📚 **Developer Guide**
+- [**Complete Setup Guide**](docs/guides/developer-guide.md) - Detailed instructions
+- [**Troubleshooting**](docs/guides/developer-guide.md#-troubleshooting) - Common issues
+- [**Production Deployment**](docs/guides/developer-guide.md#-production-deployment) - Mainnet deployment
+
+### ⚡ **One-Command Development**
+```bash
+# Full development cycle (install + test + deploy + demo)
+make dev
+
+# Individual commands
+make install    # Install dependencies
+make test       # Run core tests  
+make deploy     # Deploy to local chain
+make demo       # Run Olympics demo
 ```
 
 ---
@@ -190,10 +199,10 @@ npm run dev
 - [**Quick Start**](#-quick-start) - 1-minute demo setup
 - [**Architecture Deep Dive**](docs/architecture/) - Technical documentation
 
-### 🔗 **External Links**
+### 🔗 **Contracts**
 - **Contract**: [0xfa96065F919762EFb7Bef68Edf9fb0559CC3e3a3](https://etherscan.io/address/0xfa96065F919762EFb7Bef68Edf9fb0559CC3e3a3)
-- **Automation**: [0x516Cf68FA8030958056C1b68336258A93D709687](https://etherscan.io/address/0x516Cf68FA8030958056C1b68336258A93D709687)
-- **GitHub**: [apeaircreative/olympics-prediction-oracle](https://github.com/apeaircreative/olympics-prediction-oracle)
+- **CRE Automation (Upkeep)**: [0x516Cf68FA8030958056C1b68336258A93D709687](https://etherscan.io/address/0x516Cf68FA8030958056C1b68336258A93D709687)
+
 
 ---
 ```bash
@@ -225,20 +234,6 @@ npm run test:integration
 - **[Settlement](docs/flows/settlement.md)** - Advanced oracle settlement
 - **[Betting](docs/flows/betting.md)** - ETH-based betting system
 - **[Chainlink Automation](docs/flows/chainlink-automation.md)** - Automated settlement
-
----
-
-## 🔗 Contract Integration
-
-### Deployed Contract
-- **Address:** `0xfa96065F919762EFb7Bef68Edf9fb0559CC3e3a3`
-- **Network:** Ethereum Mainnet (demo configuration)
-- **Chain:** Chainlink CRE supported network
-
-### Chainlink Automation
-- **Upkeep Address:** `0x516Cf68FA8030958056C1b68336258A93D709687`
-- **Schedule:** Every 2 hours during Olympics (Feb 10-13, 2026)
-- **Funding:** 2 LINK for automated settlement
 
 ---
 

@@ -151,7 +151,7 @@ forge test --via-ir
 anvil
 
 # 4️⃣ Deploy contracts (new terminal)
-forge script script/Deploy.s.sol --rpc-url http://localhost:8545 --broadcast
+forge script contracts/script/Deploy.s.sol --rpc-url http://localhost:8545 --broadcast
 
 # 5️⃣ Run full demo
 make demo

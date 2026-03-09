@@ -4,7 +4,27 @@
 
 ---
 
-## 🚀 Quick Start (5 Commands)
+## � **Security First - Important!**
+
+### ⚠️ **Never Commit Real Private Keys**
+- Your `.env` file contains sensitive data
+- It's already in `.gitignore` and will NOT be committed
+- Use `.env.example` as a template for your setup
+
+### 🛡️ **Safe Development Practices**
+```bash
+# Use the example file as template
+cp .env.example .env
+# Edit .env with YOUR private keys (never commit this file)
+
+# For demo purposes, you can use testnet accounts
+# Anvil provides test accounts with free ETH
+anvil  # Shows 10 test accounts with private keys
+```
+
+---
+
+## �🚀 Quick Start (5 Commands)
 
 ```bash
 # 1️⃣ Install dependencies
@@ -66,7 +86,7 @@ anvil
 ### 4. Deploy Contracts
 ```bash
 # In a NEW terminal (keep anvil running):
-forge script script/Deploy.s.sol --rpc-url http://localhost:8545 --broadcast
+forge script contracts/script/Deploy.s.sol --rpc-url http://localhost:8545 --broadcast
 
 # This deploys:
 # - PredictionMarket contract
@@ -228,4 +248,4 @@ forge script script/Deploy.s.sol --rpc-url $MAINNET_RPC --broadcast --verify
 
 ---
 
-*Happy coding! 🎉 Build amazing prediction markets!*
+

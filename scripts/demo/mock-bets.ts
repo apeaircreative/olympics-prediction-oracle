@@ -11,7 +11,7 @@ const PREDICTION_MARKET_ABI = [
 ];
 
 const MARKET_ADDRESS = "0xfa96065F919762EFb7Bef68Edf9fb0559CC3e3a3";
-const SEPOLIA_RPC = "https://sepolia.infura.io/v3/YOUR_INFURA_KEY"; // Replace with actual
+const SEPOLIA_RPC = "https://sepolia.infura.io/v3/YOUR_INFURA_KEY"; // Replace with actual key
 
 async function placeBet(marketId: number, side: 'yes' | 'no', amountEth: string) {
     const provider = new ethers.JsonRpcProvider(SEPOLIA_RPC);
